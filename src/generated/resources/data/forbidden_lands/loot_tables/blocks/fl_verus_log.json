@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "forbidden_lands:ground_block"
+          "name": "forbidden_lands:fl_verus_log"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "forbidden_lands:blocks/ground_block"
+  "random_sequence": "forbidden_lands:blocks/fl_verus_log"
 }

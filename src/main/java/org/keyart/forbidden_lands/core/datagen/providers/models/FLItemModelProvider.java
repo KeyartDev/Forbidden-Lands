@@ -10,6 +10,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.keyart.forbidden_lands.ForbiddenLands;
+import org.keyart.forbidden_lands.core.registries.FLBlocks;
 
 public class FLItemModelProvider extends ItemModelProvider {
     public FLItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -18,7 +19,7 @@ public class FLItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        saplingItem(FLBlocks.FL_VERUS_SAPLING);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> itemRegistryObject) {

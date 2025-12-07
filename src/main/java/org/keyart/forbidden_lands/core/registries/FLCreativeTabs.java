@@ -14,9 +14,14 @@ public class FLCreativeTabs {
 
     public static final RegistryObject<CreativeModeTab> FL_CREATIVE_TAB = CREATIVE_TABS.register("fl_creative_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("creative_tab.forbidden_lands.fl_creative_tab"))
-            .icon(() -> new ItemStack(FLBlocks.GROUND_BLOCK.get()))
+            .icon(() -> new ItemStack(FLBlocks.FL_GRASS_BLOCK.get()))
             .displayItems(((pParameters, pOutput) -> {
-                pOutput.accept(FLBlocks.GROUND_BLOCK.get());
+                pOutput.accept(FLBlocks.FL_GRASS_BLOCK.get());
+                pOutput.accept(FLBlocks.FL_DIRT.get());
+                pOutput.accept(FLBlocks.FL_STONE.get());
+                pOutput.accept(FLBlocks.FL_VERUS_LOG.get());
+                pOutput.accept(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
+                pOutput.accept(FLBlocks.FL_VERUS_SAPLING.get());
             })).build());
 
     public static void register(IEventBus bus) {

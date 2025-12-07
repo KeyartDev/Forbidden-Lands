@@ -7,6 +7,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import org.keyart.forbidden_lands.ForbiddenLands;
+import org.keyart.forbidden_lands.core.registries.FLBlocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -21,6 +22,9 @@ public class FLBlocksTagProvider extends BlockTagsProvider {
         registerMineableTags();
         registerToolRequirementsTags();
 
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(FLBlocks.FL_VERUS_LOG.get())
+                .add(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
 
     }
 

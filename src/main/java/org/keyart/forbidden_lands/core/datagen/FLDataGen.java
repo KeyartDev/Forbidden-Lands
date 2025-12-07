@@ -18,6 +18,7 @@ import org.keyart.forbidden_lands.core.datagen.providers.models.FLItemModelProvi
 import org.keyart.forbidden_lands.core.datagen.providers.recipe.FLRecipeProvider;
 import org.keyart.forbidden_lands.core.datagen.providers.tags.FLBlocksTagProvider;
 import org.keyart.forbidden_lands.core.datagen.providers.tags.FLItemsTagProvider;
+import org.keyart.forbidden_lands.core.datagen.providers.worldgen.FLWorldgenProvider;
 
 import java.util.List;
 import java.util.Set;
@@ -57,6 +58,8 @@ public class FLDataGen {
 
         generator.addProvider(true, new LootTableProvider(packOutput, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(FLBlockLootProvider::new, LootContextParamSets.BLOCK))));
+
+        generator.addProvider(true, new FLWorldgenProvider(packOutput, lookupProvider));
 
     }
 }

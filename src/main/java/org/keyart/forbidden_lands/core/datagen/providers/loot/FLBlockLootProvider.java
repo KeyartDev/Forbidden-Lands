@@ -11,6 +11,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import org.keyart.forbidden_lands.core.registries.FLBlocks;
+import org.keyart.forbidden_lands.core.registries.FLItems;
 
 import java.util.Set;
 import java.util.function.Function;
@@ -24,7 +25,15 @@ public class FLBlockLootProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(FLBlocks.GROUND_BLOCK.get());
+        dropSelf(FLBlocks.FL_GRASS_BLOCK.get());
+        dropSelf(FLBlocks.FL_DIRT.get());
+        dropSelf(FLBlocks.FL_STONE.get());
+        dropSelf(FLBlocks.FL_VERUS_LOG.get());
+        dropSelf(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
+        dropSelf(FLBlocks.FL_VERUS_SAPLING.get());
+
+        add(FLBlocks.FL_VERUS_LEAVES.get(), block ->
+                createLeavesDrops(block, FLBlocks.FL_VERUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     private void addOreDrop(Block oreBlock, Item drop, int min, int max) {

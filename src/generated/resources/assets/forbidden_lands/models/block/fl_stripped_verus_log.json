@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "forbidden_lands:block/fl_stripped_verus_log_top",
+    "side": "forbidden_lands:block/fl_stripped_verus_log"
+  }
+}

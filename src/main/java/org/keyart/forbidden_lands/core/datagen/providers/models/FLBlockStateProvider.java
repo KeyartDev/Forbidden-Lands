@@ -3,6 +3,7 @@ package org.keyart.forbidden_lands.core.datagen.providers.models;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -18,11 +19,24 @@ public class FLBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(FLBlocks.GROUND_BLOCK);
-        simpleBlockWithItem(FLBlocks.GROUND_BLOCK.get(), models().cubeBottomTop(ForgeRegistries.BLOCKS.getKey(FLBlocks.GROUND_BLOCK.get()).getPath(),
-                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/texture_side"),
-                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/texture_bottom"),
-                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/texture_top")));
+        simpleBlockWithItem(FLBlocks.FL_GRASS_BLOCK.get(), models().cubeBottomTop(ForgeRegistries.BLOCKS.getKey(FLBlocks.FL_GRASS_BLOCK.get()).getPath(),
+                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/fl_grass_side"),
+                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/fl_dirt"),
+                ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/fl_grass_top")));
+
+        logBlock(((RotatedPillarBlock) FLBlocks.FL_VERUS_LOG.get()));
+        blockItem(FLBlocks.FL_VERUS_LOG);
+
+        logBlock(((RotatedPillarBlock) FLBlocks.FL_STRIPPED_VERUS_LOG.get()));
+        blockItem(FLBlocks.FL_STRIPPED_VERUS_LOG);
+
+        blockWithItem(FLBlocks.FL_DIRT);
+        blockWithItem(FLBlocks.FL_STONE);
+
+        leavesBlock(FLBlocks.FL_VERUS_LEAVES);
+        blockItem(FLBlocks.FL_VERUS_LEAVES);
+
+        saplingBlock(FLBlocks.FL_VERUS_SAPLING);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

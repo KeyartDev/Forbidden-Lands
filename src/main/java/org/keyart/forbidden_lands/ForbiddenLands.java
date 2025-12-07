@@ -10,9 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.keyart.forbidden_lands.core.registries.FLBlocks;
-import org.keyart.forbidden_lands.core.registries.FLCreativeTabs;
-import org.keyart.forbidden_lands.core.registries.FLItems;
+import org.keyart.forbidden_lands.core.registries.*;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -33,6 +31,8 @@ public class ForbiddenLands {
         FLBlocks.register(modEventBus);
         FLItems.register(modEventBus);
         FLCreativeTabs.register(modEventBus);
+        FLTrunkPlacers.register(modEventBus);
+        FLFoliagePlacers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

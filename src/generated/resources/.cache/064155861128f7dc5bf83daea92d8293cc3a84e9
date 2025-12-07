@@ -1,3 +1,4 @@
-// 1.20.1	2025-11-30T19:40:19.4750816	Tags for minecraft:block mod id forbidden_lands
+// 1.20.1	2025-12-07T13:32:04.6592021	Tags for minecraft:block mod id forbidden_lands
+ab85e4ec6ecff85c55102622850637cabae60ac3 data/minecraft/tags/blocks/logs_that_burn.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_iron_tool.json
