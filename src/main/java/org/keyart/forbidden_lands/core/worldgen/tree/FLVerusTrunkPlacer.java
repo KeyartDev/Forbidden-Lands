@@ -36,58 +36,34 @@ public class FLVerusTrunkPlacer extends TrunkPlacer {
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
         if (pLevel.isStateAtPosition(pPos.below(), (state -> state.is(FLBlocks.FL_GRASS_BLOCK.get())))) {
             pBlockSetter.accept(pPos.below(), FLBlocks.FL_DIRT.get().defaultBlockState());
+        } else if (pLevel.isStateAtPosition(pPos.below(), (state -> state.is(FLBlocks.FL_DIRT.get())))) {
+            pBlockSetter.accept(pPos.below(), FLBlocks.FL_DIRT.get().defaultBlockState());
         } else {
             setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
         }
         int height = this.baseHeight + pRandom.nextInt(0, this.heightRandA);
 
-
-        BlockPos pos1 = pPos.above(height-1);
-        BlockPos pos2 = null;
-        BlockPos pos3 = null;
+        pBlockSetter.accept(pPos.north(), FLBlocks.FL_VERUS_LOG.get().defaultBlockState());
+        pBlockSetter.accept(pPos.south(), FLBlocks.FL_VERUS_LOG.get().defaultBlockState());
+        pBlockSetter.accept(pPos.west(), FLBlocks.FL_VERUS_LOG.get().defaultBlockState());
+        pBlockSetter.accept(pPos.east(), FLBlocks.FL_VERUS_LOG.get().defaultBlockState());
 
         for (int i = 0; i < height; i++) {
             placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i), pConfig);
-
-            if (i == height - 3) {
-                if (pRandom.nextFloat() > 0.5F) {
-                    pBlockSetter.accept(pPos.above(i).east().north(),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y))));
-
-                    pBlockSetter.accept(pPos.above(i).east().north(2),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-
-                    pos2 = pPos.above(i).east().north(2);
-
-                    pBlockSetter.accept(pPos.above(i).west().south(),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y))));
-
-                    pBlockSetter.accept(pPos.above(i).west().south(2),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-
-                    pos3 = pPos.above(i).west().south(2);
-                } else {
-                    pBlockSetter.accept(pPos.above(i).west().north(),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y))));
-
-                    pBlockSetter.accept(pPos.above(i).west().north(2),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-
-                    pos2 = pPos.above(i).west().north(2);
-
-                    pBlockSetter.accept(pPos.above(i).east().south(),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y))));
-
-                    pBlockSetter.accept(pPos.above(i).east().south(2),
-                            ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-
-                    pos3 = pPos.above(i).east().south(2);
-                }
-            }
         }
 
-        return List.of(new FoliagePlacer.FoliageAttachment(pos1, 0, false),
-                new FoliagePlacer.FoliageAttachment(pos2, 1, false),
-                new FoliagePlacer.FoliageAttachment(pos3, 1, false));
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height).north().west(), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height).north().east(), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height).south().west(), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height).south().east(), pConfig);
+
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height+1).north(2).west(2), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height+1).north(2).east(2), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height+1).south(2).west(2), pConfig);
+        placeLog(pLevel, pBlockSetter, pRandom, pPos.above(height+1).south(2).east(2), pConfig);
+
+
+
+        return List.of(new FoliagePlacer.FoliageAttachment(pPos.above(height), 0, false));
     }
 }

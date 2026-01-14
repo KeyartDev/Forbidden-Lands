@@ -1,0 +1,8 @@
+{
+  "values": [
+    "minecraft:dirt",
+    "minecraft:grass_block",
+    "forbidden_lands:fl_grass_block",
+    "forbidden_lands:fl_dirt"
+  ]
+}

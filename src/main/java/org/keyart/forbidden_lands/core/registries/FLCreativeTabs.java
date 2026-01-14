@@ -22,6 +22,8 @@ public class FLCreativeTabs {
                 pOutput.accept(FLBlocks.FL_VERUS_LOG.get());
                 pOutput.accept(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
                 pOutput.accept(FLBlocks.FL_VERUS_SAPLING.get());
+                pOutput.accept(FLBlocks.FL_GRASS.get());
+                pOutput.accept(FLBlocks.FL_LUMIR.get());
             })).build());
 
     public static void register(IEventBus bus) {

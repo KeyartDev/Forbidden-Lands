@@ -3,11 +3,13 @@ package org.keyart.forbidden_lands.core.datagen.providers.tags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import org.keyart.forbidden_lands.ForbiddenLands;
 import org.keyart.forbidden_lands.core.registries.FLBlocks;
+import org.keyart.forbidden_lands.core.registries.FLTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,6 +28,11 @@ public class FLBlocksTagProvider extends BlockTagsProvider {
                 .add(FLBlocks.FL_VERUS_LOG.get())
                 .add(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
 
+        tag(FLTags.FL_PLANTS_GROW_ON)
+                .add(Blocks.DIRT)
+                .add(Blocks.GRASS_BLOCK)
+                .add(FLBlocks.FL_GRASS_BLOCK.get())
+                .add(FLBlocks.FL_DIRT.get());
     }
 
     private void registerMineableTags() {

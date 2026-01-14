@@ -1,14 +1,20 @@
 package org.keyart.forbidden_lands.core.registries;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.keyart.forbidden_lands.ForbiddenLands;
+import org.keyart.forbidden_lands.common.blocks.abstr.AbstractFLPlant;
+import org.keyart.forbidden_lands.common.blocks.abstr.AbstractFLSapling;
+import org.keyart.forbidden_lands.common.blocks.custom.FLGrass;
 import org.keyart.forbidden_lands.common.blocks.custom.FLGrassBlock;
 import org.keyart.forbidden_lands.common.blocks.custom.FLRotatedPillarFlammableBlock;
 import org.keyart.forbidden_lands.common.blocks.custom.FlVerusLogBlock;
@@ -38,7 +44,13 @@ public class FLBlocks {
             registerBlock("fl_verus_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
     public static final RegistryObject<Block> FL_VERUS_SAPLING =
-            registerBlock("fl_verus_sapling", () -> new SaplingBlock(new FLVerusGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            registerBlock("fl_verus_sapling", () -> new AbstractFLSapling(new FLVerusGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> FL_GRASS =
+            registerBlock("fl_grass", FLGrass::new);
+
+    public static final RegistryObject<Block> FL_LUMIR =
+            registerBlock("lumir", () -> new AbstractFLPlant(BlockBehaviour.Properties.copy(Blocks.TORCHFLOWER).lightLevel((blockState) -> 9)));
 
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);

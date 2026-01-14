@@ -20,12 +20,20 @@ public class FLItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(FLBlocks.FL_VERUS_SAPLING);
+        plantableItem(FLBlocks.FL_GRASS);
+        plantableItem(FLBlocks.FL_LUMIR);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> itemRegistryObject) {
         return withExistingParent(itemRegistryObject.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/" + itemRegistryObject.getId().getPath()));
+    }
+
+    private ItemModelBuilder plantableItem(RegistryObject<Block> block) {
+        return withExistingParent(block.getId().getPath(),
+                ResourceLocation.parse("item/generated"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID, "block/" + block.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

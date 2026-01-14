@@ -1,3 +1,9 @@
-// 1.20.1	2025-12-07T13:20:54.6227639	Registries
-16b20fc91f0b3178ecf077bd87283d3335ace91a data/forbidden_lands/worldgen/configured_feature/verus_tree.json
+// 1.20.1	2025-12-22T14:01:18.2244657	Registries
+383143ff870a16296a8516eb4d034978e21c636a data/forbidden_lands/worldgen/configured_feature/fl_grass_patch.json
+fd34269b5465d711acdb6019d4f015a7d99eedf1 data/forbidden_lands/worldgen/configured_feature/fl_grass_single.json
+5db21548473af8ef01999fd26d880df74a847f1b data/forbidden_lands/worldgen/configured_feature/fl_lumir_single.json
+ff60834810c0eb061b8262ae7cfe4038d9f3683f data/forbidden_lands/worldgen/configured_feature/verus_tree.json
+2b8057e08980ab7d894185a6c03182db36119d6e data/forbidden_lands/worldgen/placed_feature/fl_grass_patch_placed.json
+fb71cd0b0a8a2bee0a56e9b9ddebe23efa9a2051 data/forbidden_lands/worldgen/placed_feature/fl_grass_single_placed.json
+441bc2fa275a3a1a8092fba69cb82fe3c2246de8 data/forbidden_lands/worldgen/placed_feature/fl_lumir_patch_placed.json
 96d1579629d3db2f1a8cd824359d793bcec05d26 data/forbidden_lands/worldgen/placed_feature/verus_tree_placed.json

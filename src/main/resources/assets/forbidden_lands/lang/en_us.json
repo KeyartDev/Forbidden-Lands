@@ -7,5 +7,8 @@
   "block.forbidden_lands.fl_verus_log": "Verus Log",
   "block.forbidden_lands.fl_stripped_verus_log": "Stripped Verus Log",
   "block.forbidden_lands.fl_verus_leaves": "Verus Leaves",
-  "block.forbidden_lands.fl_verus_sapling": "Verus Sapling"
+  "block.forbidden_lands.fl_verus_sapling": "Verus Sapling",
+
+  "block.forbidden_lands.fl_grass": "Forbidden Lands Grass",
+  "block.forbidden_lands.lumir": "Lumir"
 }

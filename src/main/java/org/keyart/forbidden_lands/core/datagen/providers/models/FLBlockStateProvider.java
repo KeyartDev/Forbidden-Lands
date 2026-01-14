@@ -37,6 +37,13 @@ public class FLBlockStateProvider extends BlockStateProvider {
         blockItem(FLBlocks.FL_VERUS_LEAVES);
 
         saplingBlock(FLBlocks.FL_VERUS_SAPLING);
+
+        createPlantable(FLBlocks.FL_GRASS);
+    }
+
+    private void createPlantable(RegistryObject<Block> block) {
+        simpleBlock(block.get(), models().cross(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modBlockTexture(block)).renderType("cutout"));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
@@ -57,5 +64,10 @@ public class FLBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private ResourceLocation modBlockTexture(RegistryObject<Block> block) {
+        return ResourceLocation.fromNamespaceAndPath(ForbiddenLands.MODID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath());
     }
 }

@@ -31,9 +31,14 @@ public class FLBlockLootProvider extends BlockLootSubProvider {
         dropSelf(FLBlocks.FL_VERUS_LOG.get());
         dropSelf(FLBlocks.FL_STRIPPED_VERUS_LOG.get());
         dropSelf(FLBlocks.FL_VERUS_SAPLING.get());
+        dropSelf(FLBlocks.FL_LUMIR.get());
 
         add(FLBlocks.FL_VERUS_LEAVES.get(), block ->
                 createLeavesDrops(block, FLBlocks.FL_VERUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        add(FLBlocks.FL_GRASS.get(), block -> createGrassDrops(FLBlocks.FL_GRASS.get()));
+
+
     }
 
     private void addOreDrop(Block oreBlock, Item drop, int min, int max) {
