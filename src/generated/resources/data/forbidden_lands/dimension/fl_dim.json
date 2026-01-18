@@ -1,0 +1,24 @@
+{
+  "type": "forbidden_lands:fl_dim_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "forbidden_lands:dormant_forest_biome",
+          "parameters": {
+            "continentalness": 0.0,
+            "depth": 1.0,
+            "erosion": 0.0,
+            "humidity": 0.0,
+            "offset": 1.0,
+            "temperature": 0.0,
+            "weirdness": 0.0
+          }
+        }
+      ]
+    },
+    "settings": "forbidden_lands:forbidden_lands"
+  }
+}

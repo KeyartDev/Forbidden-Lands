@@ -32,24 +32,17 @@ public class FLPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, VERUS_TREE_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.VERUS_TREE_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.1F, 2),
                         FLBlocks.FL_VERUS_SAPLING.get()));
 
-        register(context, FL_GRASS_PATCH_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.FL_GRASS_PATCH_KEY), List.of(
-                NoiseThresholdCountPlacement.of(0.8D, 5, 10),
-                InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                BiomeFilter.biome()));
+        register(context, FL_GRASS_PATCH_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.FL_GRASS_PATCH_KEY), VegetationPlacements.worldSurfaceSquaredWithCount(25));
 
         register(context, FL_GRASS_SINGLE_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.FL_GRASS_SINGLE_KEY), List.of());
 
-//        register(context, FL_LUMIR_PATCH_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.FL_LUMIR_PATCH_KEY), List.of(
-//                NoiseThresholdCountPlacement.of(0.8D, 15, 4),
-//                InSquarePlacement.spread(),
-//                PlacementUtils.HEIGHTMAP
-//                ));
-
-        PlacementUtils.register(context, FL_LUMIR_PATCH_KEY, configuredFeatures.getOrThrow(FLConfiguredFeatures.FL_LUMIR_PATCH_KEY), NoiseThresholdCountPlacement.of(-0.8D, 15, 4), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, FL_LUMIR_PATCH_KEY, configuredFeatures.getOrThrow(
+                FLConfiguredFeatures.FL_LUMIR_PATCH_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(10)
+        );
 
     }
 

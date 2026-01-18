@@ -1,0 +1,47 @@
+{
+  "carvers": {},
+  "downfall": 0.8,
+  "effects": {
+    "fog_color": 14524637,
+    "foliage_color": 13763580,
+    "grass_color": 8324092,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 12211667,
+    "water_color": 6970061,
+    "water_fog_color": 4734347
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "forbidden_lands:verus_tree_placed",
+      "forbidden_lands:fl_grass_patch_placed",
+      "forbidden_lands:fl_lumir_patch_placed"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.7
+}

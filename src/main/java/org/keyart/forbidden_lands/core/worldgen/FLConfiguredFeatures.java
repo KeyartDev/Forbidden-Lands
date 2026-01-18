@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.keyart.forbidden_lands.ForbiddenLands;
 import org.keyart.forbidden_lands.core.registries.FLBlocks;
@@ -44,10 +45,7 @@ public class FLConfiguredFeatures {
                         new SimpleBlockConfiguration(BlockStateProvider.simple(FLBlocks.FL_GRASS.get())))));
 
         register(context, FL_GRASS_SINGLE_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(FLBlocks.FL_GRASS.get())));
-        register(context, FL_LUMIR_PATCH_KEY, Feature.FLOWER, new RandomPatchConfiguration(3, 3, 2,
-                PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
-                        new SimpleBlockConfiguration(
-                                BlockStateProvider.simple(FLBlocks.FL_LUMIR.get().defaultBlockState())))));
+        register(context, FL_LUMIR_PATCH_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(FLBlocks.FL_LUMIR.get())));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

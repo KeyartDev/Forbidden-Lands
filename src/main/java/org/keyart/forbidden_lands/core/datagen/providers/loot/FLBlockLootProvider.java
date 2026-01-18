@@ -3,11 +3,14 @@ package org.keyart.forbidden_lands.core.datagen.providers.loot;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import org.keyart.forbidden_lands.core.registries.FLBlocks;
@@ -36,7 +39,7 @@ public class FLBlockLootProvider extends BlockLootSubProvider {
         add(FLBlocks.FL_VERUS_LEAVES.get(), block ->
                 createLeavesDrops(block, FLBlocks.FL_VERUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-        add(FLBlocks.FL_GRASS.get(), block -> createGrassDrops(FLBlocks.FL_GRASS.get()));
+        add(FLBlocks.FL_GRASS.get(), block -> createFLGrassDrops(FLBlocks.FL_GRASS.get()));
 
 
     }
@@ -47,6 +50,10 @@ public class FLBlockLootProvider extends BlockLootSubProvider {
                         LootItem.lootTableItem(drop)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)))
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
+    }
+
+    protected LootTable.Builder createFLGrassDrops(Block pBlock) {
+        return createShearsDispatchTable(pBlock, this.applyExplosionDecay(pBlock, LootItem.lootTableItem(pBlock).when(LootItemRandomChanceCondition.randomChance(0.125F)).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 2))));
     }
 
     @Override

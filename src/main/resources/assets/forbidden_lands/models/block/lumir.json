@@ -4,7 +4,8 @@
   "ambientocclusion": false,
   "textures": {
     "cross": "forbidden_lands:block/lumir",
-    "glowy": "forbidden_lands:block/lumir_glow"
+    "glowy": "forbidden_lands:block/lumir_glow",
+    "particle": "forbidden_lands:block/lumir"
   },
   "elements": [
     {   "from": [ 0.8, 0, 8 ],

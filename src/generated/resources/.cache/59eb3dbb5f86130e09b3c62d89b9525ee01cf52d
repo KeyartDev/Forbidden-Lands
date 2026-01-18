@@ -1,6 +1,6 @@
-// 1.20.1	2025-12-21T17:23:40.2126211	Loot Tables
+// 1.20.1	2026-01-18T12:09:08.821995	Loot Tables
 146392f58b66a33eb2c5a923f9ec84c0f411624a data/forbidden_lands/loot_tables/blocks/fl_dirt.json
-0523cd5df83a6e1197113adb146ed6d7609d2688 data/forbidden_lands/loot_tables/blocks/fl_grass.json
+8f06a833df845b065dfe38d7bb26dc1a89ef0d8b data/forbidden_lands/loot_tables/blocks/fl_grass.json
 1442fa9f91b1245dc2bffa512e2678ac0e6f8096 data/forbidden_lands/loot_tables/blocks/fl_grass_block.json
 ed9c8b2156c74e9c81753dc446ed292477b022ac data/forbidden_lands/loot_tables/blocks/fl_stone.json
 36690a8338d2ecaad75c9309cca4f0a4606e3561 data/forbidden_lands/loot_tables/blocks/fl_stripped_verus_log.json
